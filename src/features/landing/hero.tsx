@@ -63,9 +63,9 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <div className=" bg-black  text-white overflow-hidden relative mt-42">
+    <div className="bg-black  text-white overflow-hidden relative ">
       {/* ── HERO TEXT ── */}
-      <div className="relative z-10 flex flex-col items-center pt-16 pb-0 w-[92%] max-w-7xl mx-auto px-6">
+      <div className="relative z-10 flex flex-col items-center pt-16 pb-0 w-[92%] max-w-7xl mx-auto px-6 mt-32">
         {/* Heading */}
         <motion.h1
           variants={fadeUp}
