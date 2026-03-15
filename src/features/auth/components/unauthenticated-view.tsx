@@ -1,30 +1,25 @@
-import {
-  Item,
-  ItemContent,
-  ItemDescription,
-  ItemMedia,
-  ItemTitle,
-} from "@/components/ui/item";
-import { ShieldAlertIcon } from "lucide-react";
+import HeroSection from "@/features/landing/hero";
+import Navbar from "@/features/landing/navbar";
+import LogoTicker from "@/features/landing/logo-ticker";
+import CoreFeatures from "@/features/landing/core-features";
+import Benefits from "@/features/landing/benefits";
+import Testimonials from "@/features/landing/testimonials";
+import UseCases from "@/features/landing/use-cases";
+import Footer from "@/features/landing/footer";
 
-const UnaAuthenticatedView = () => {
+const UnauthenticatedView = () => {
   return (
-    <div className="flex items-center justify-center h-screen bg-background">
-      <div className="w-full max-w-lg bg-muted">
-        <Item variant="outline">
-          <ItemMedia variant="icon">
-            <ShieldAlertIcon />
-          </ItemMedia>
-          <ItemContent>
-            <ItemTitle>Not Authenticated</ItemTitle>
-            <ItemDescription>
-              Please log in to access this feature.
-            </ItemDescription>
-          </ItemContent>
-        </Item>
-      </div>
-    </div>
+    <main>
+      <Navbar />
+      <HeroSection />
+      <LogoTicker />
+      <CoreFeatures />
+      <UseCases />
+      <Benefits />
+      <Testimonials />
+      <Footer />
+    </main>
   );
 };
 
-export default UnaAuthenticatedView;
+export default UnauthenticatedView;
