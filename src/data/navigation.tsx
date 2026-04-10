@@ -1,4 +1,5 @@
-import React from "react";
+
+
 import { Twitter, Github } from "lucide-react";
 
 // High-fidelity Discord SVG for a premium look

@@ -1,6 +1,7 @@
 "use client";
 
-import { Sparkles, Settings, Search, HelpCircle } from "lucide-react";
+import { Settings, Search, HelpCircle } from "lucide-react";
+
 
 interface AISidebarProps {
   children: React.ReactNode;

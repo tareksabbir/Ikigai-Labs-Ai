@@ -1,6 +1,7 @@
 "use client";
 
-import React from "react";
+
+
 import { benefits } from "@/data/benefits";
 
 

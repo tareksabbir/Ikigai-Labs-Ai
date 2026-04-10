@@ -1,11 +1,11 @@
 "use client";
 
-import React from "react";
 import Navbar from "@/features/landing/navbar";
 import Footer from "@/features/landing/footer";
 import { motion } from "framer-motion";
-import { BookOpen, Code, Layers, Zap, Terminal, Globe, Search, ArrowRight, ShieldCheck, Cpu, Rocket } from "lucide-react";
+import { Search, ArrowRight } from "lucide-react";
 import Link from "next/link";
+
 
 import { DOCS_GROUPS } from "@/data/documentation";
 

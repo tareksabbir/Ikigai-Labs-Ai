@@ -1,23 +1,15 @@
 "use client";
 
-import { useRef } from "react";
+import React, { useRef } from "react";
+
 import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
-import {
-  X,
-  Search,
-  Settings,
-  HelpCircle,
-  Sparkles,
-  ChevronDown,
-  ChevronRight,
-  File,
-  ArrowUpRight,
-} from "lucide-react";
-import EditorWindow from "./components/editor-window";
-import TerminalPanel from "./components/terminal-panel";
-import AISidebar from "./components/ai-sidebar";
-import FileExplorer from "./components/file-explorer";
+import { ArrowUpRight } from "lucide-react";
+
+import EditorWindow from "@/features/landing/components/editor-window";
+import TerminalPanel from "@/features/landing/components/terminal-panel";
+import AISidebar from "@/features/landing/components/ai-sidebar";
+import FileExplorer from "@/features/landing/components/file-explorer";
 import { 
   CARD1_EDITOR, 
   CARD1_TERMINAL, 
@@ -28,6 +20,7 @@ import {
   CARD3_TERMINAL, 
   CARD3_AI_CHAT 
 } from "@/data/features";
+
 
 
 
@@ -65,13 +58,14 @@ export default function CoreFeatures() {
             className="text-white/35 text-xs font-medium mb-4 sm:mb-5 tracking-widest uppercase"
             style={{ fontFamily: "var(--font-plex-mono, monospace)" }}
           >
-            // Core features
+           Core features
           </p>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-medium leading-[1.08] tracking-[-0.03em]">
             <span className="text-white">Code with precision.</span>
             <br />
             <span className="text-white/30">Ship with confidence.</span>
           </h2>
+
         </div>
 
         {/* ── Sticky stack ── */}

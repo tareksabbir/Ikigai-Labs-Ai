@@ -4,7 +4,7 @@ import React from "react";
 import Navbar from "@/features/landing/navbar";
 import Footer from "@/features/landing/footer";
 import { motion } from "framer-motion";
-import { Zap, Rocket, Bug, Sparkles, Cpu } from "lucide-react";
+import { Zap, Rocket, Bug, Cpu } from "lucide-react";
 
 const UPDATES = [
   {

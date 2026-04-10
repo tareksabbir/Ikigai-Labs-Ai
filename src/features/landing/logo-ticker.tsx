@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Zap, ScanLine, Asterisk, Chrome } from "lucide-react";
+
 
 import { LOGOS_ROW_1, LOGOS_ROW_2 } from "@/data/logos";
 
