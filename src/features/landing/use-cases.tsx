@@ -1,5 +1,7 @@
 import React from "react";
 import Image from "next/image";
+import { USE_CASE_CODE } from "@/data/features";
+
 
 export default function UseCases() {
   return (
@@ -49,48 +51,8 @@ export default function UseCases() {
 
           {/* Floating Code Editor */}
           <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] md:w-162.5 bg-[#0c0c0c]/95 backdrop-blur-md border border-white/10 rounded-xl p-8 shadow-2xl">
-            <div className="font-mono text-[13px] md:text-sm leading-[1.8] text-white/80 overflow-x-auto whitespace-pre">
-              <div>
-                <span className="text-orange-400">import</span> {"{ NextApiRequest, NextApiResponse }"} <span className="text-orange-400">from</span> <span className="text-emerald-400">&apos;next&apos;</span>
-              </div>
-              <div>
-                <span className="text-orange-400">import</span> {"{ supabase }"} <span className="text-orange-400">from</span> <span className="text-emerald-400">&apos;@/lib/supabase&apos;</span>
-              </div>
-              <br />
-              <div>
-                <span className="text-orange-400">export default async function</span> <span className="text-blue-400">handler</span>{"("}
-              </div>
-              <div>{"  "}req: NextApiRequest,</div>
-              <div>{"  "}res: NextApiResponse</div>
-              <div>{") {"}</div>
-              <div>
-                {"  "}<span className="text-orange-400">if</span> (req.<span className="text-yellow-400">method</span> === <span className="text-emerald-400">&apos;GET&apos;</span>) {"{"}
-              </div>
-              <div>
-                {"    "}<span className="text-white/40">{"// AI suggestion: Add pagination and filtering"}</span>
-              </div>
-              <div>
-                {"    "}<span className="text-orange-400">const</span> {"{ data, error }"} = <span className="text-orange-400">await</span> supabase
-              </div>
-              <div>
-                {"      "}.<span className="text-yellow-400">from</span>(<span className="text-emerald-400">&apos;products&apos;</span>)
-              </div>
-              <div>
-                {"      "}.<span className="text-yellow-400">select</span>(<span className="text-emerald-400">&apos;*&apos;</span>)
-              </div>
-              <div>
-                {"      "}.<span className="text-yellow-400">order</span>(<span className="text-emerald-400">&apos;created_at&apos;</span>, {"{ ascending:"} <span className="text-purple-400">false</span> {"})"}
-              </div>
-              <br />
-              <div>
-                {"    "}<span className="text-orange-400">if</span> (error) <span className="text-orange-400">return</span> res.<span className="text-yellow-400">status</span>(<span className="text-purple-400">500</span>).<span className="text-yellow-400">json</span>({"{"} error {"}"})
-              </div>
-              <div>
-                {"    "}<span className="text-orange-400">return</span> res.<span className="text-yellow-400">status</span>(<span className="text-purple-400">200</span>).<span className="text-yellow-400">json</span>(data)
-              </div>
-              <div>{"  }"}</div>
-              <div>{"}"}</div>
-            </div>
+            {USE_CASE_CODE}
+
           </div>
         </div>
 
