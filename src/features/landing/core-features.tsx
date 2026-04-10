@@ -2,6 +2,7 @@
 
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
+import Image from "next/image";
 import {
   X,
   Search,
@@ -66,13 +67,15 @@ export default function CoreFeatures() {
           <div className="sticky top-16 sm:top-20 z-10 mb-[40vh] sm:mb-[45vh]">
             <motion.div
               style={{ scale: scale1, opacity: opacity1, y: y1 }}
-              className="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] rounded-xl sm:rounded-2xl overflow-hidden bg-[#0f0f0f] border border-white/[0.07] shadow-[0_0_80px_rgba(0,0,0,0.8)] origin-top"
+              className="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] rounded-xl sm:rounded-2xl overflow-hidden bg-[#0f0f0f] border border-white/[0.07] hover:border-white/20 shadow-[0_0_80px_rgba(0,0,0,0.8)] hover:shadow-[0_0_80px_rgba(255,255,255,0.05)] transition-all duration-500 origin-top"
             >
               {/* Left — editor + chat */}
               <div className="flex flex-col relative overflow-hidden border-b lg:border-b-0 lg:border-r border-white/[0.06]">
-                <div
-                  className="absolute inset-0 bg-cover bg-center bg-no-repeat pointer-events-none"
-                  style={{ backgroundImage: "url('/hero.avif')" }}
+                <Image
+                  src="/hero.avif"
+                  alt="Feature showcase 1"
+                  fill
+                  className="absolute inset-0 object-cover object-center pointer-events-none"
                 />
                 <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/5 via-transparent to-transparent pointer-events-none" />
 
@@ -271,7 +274,7 @@ export default function CoreFeatures() {
           <div className="sticky top-[3.5rem] sm:top-[4.5rem] z-20 mb-[40vh] sm:mb-[45vh]">
             <motion.div
               style={{ scale: scale2, y: y2 }}
-              className="grid grid-cols-1 lg:grid-cols-[1fr_1.5fr] rounded-xl sm:rounded-2xl overflow-hidden bg-[#0f0f0f] border border-white/[0.07] shadow-[0_0_80px_rgba(0,0,0,0.8)] origin-top"
+              className="grid grid-cols-1 lg:grid-cols-[1fr_1.5fr] rounded-xl sm:rounded-2xl overflow-hidden bg-[#0f0f0f] border border-white/[0.07] hover:border-white/20 shadow-[0_0_80px_rgba(0,0,0,0.8)] hover:shadow-[0_0_80px_rgba(255,255,255,0.05)] transition-all duration-500 origin-top"
             >
               {/* Left — description */}
               <div className="p-8 sm:p-10 md:p-12 lg:p-16 flex flex-col justify-center items-start bg-[#0f0f0f] relative overflow-hidden border-b lg:border-b-0 lg:border-r border-white/[0.06]">
@@ -302,9 +305,11 @@ export default function CoreFeatures() {
 
               {/* Right — explorer + ghost text */}
               <div className="bg-[#0a0a0a] flex flex-col relative overflow-hidden">
-                <div
-                  className="absolute inset-0 bg-cover bg-center bg-no-repeat pointer-events-none"
-                  style={{ backgroundImage: "url('/hero.avif')" }}
+                <Image
+                  src="/hero.avif"
+                  alt="Feature showcase 2"
+                  fill
+                  className="absolute inset-0 object-cover object-center pointer-events-none"
                 />
                 <div className="absolute inset-0 bg-gradient-to-br from-violet-500/[0.05] via-transparent to-transparent pointer-events-none" />
 
@@ -413,13 +418,15 @@ export default function CoreFeatures() {
           <div className="sticky top-[3.5rem] sm:top-[4.5rem] z-30">
             <motion.div
               style={{ scale: scale3, y: y3 }}
-              className="grid grid-cols-1 lg:grid-cols-[1.4fr_1fr] rounded-xl sm:rounded-2xl overflow-hidden bg-[#0f0f0f] border border-white/[0.07] shadow-[0_0_80px_rgba(0,0,0,0.8)] origin-top"
+              className="grid grid-cols-1 lg:grid-cols-[1.4fr_1fr] rounded-xl sm:rounded-2xl overflow-hidden bg-[#0f0f0f] border border-white/[0.07] hover:border-white/20 shadow-[0_0_80px_rgba(0,0,0,0.8)] hover:shadow-[0_0_80px_rgba(255,255,255,0.05)] transition-all duration-500 origin-top"
             >
               {/* Left — terminal mockup */}
               <div className="bg-[#0a0a0a] flex flex-col relative overflow-hidden border-b lg:border-b-0 lg:border-r border-white/[0.06]">
-                <div
-                  className="absolute inset-0 bg-cover bg-center bg-no-repeat pointer-events-none"
-                  style={{ backgroundImage: "url('/hero.avif')" }}
+                <Image
+                  src="/hero.avif"
+                  alt="Feature showcase 3"
+                  fill
+                  className="absolute inset-0 object-cover object-center pointer-events-none"
                 />
                 <div className="absolute inset-0 bg-gradient-to-br from-sky-500/[0.05] via-transparent to-transparent pointer-events-none" />
 

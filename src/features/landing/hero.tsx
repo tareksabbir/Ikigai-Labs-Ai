@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence, Variants } from "framer-motion";
+import Image from "next/image";
 import {
   AI_BULLETS,
   CODE_LINES,
@@ -113,13 +114,16 @@ export default function HeroSection() {
           animate="visible"
           className="relative w-full rounded-2xl overflow-hidden border border-white/10 p-4 sm:p-8 md:p-12 lg:pt-20 lg:pb-16 lg:px-24"
           style={{
-            backgroundImage: `url("/hero.avif")`,
-            backgroundSize: "cover",
-            backgroundPosition: "center 35%",
-            backgroundRepeat: "no-repeat",
             boxShadow: "0 40px 100px rgba(0,0,0,0.8)",
           }}
         >
+          <Image
+            src="/hero.avif"
+            alt="Hero showcase"
+            fill
+            className="object-cover object-[center_35%] pointer-events-none"
+            priority
+          />
           {/* Dark vignette edges */}
           <div
             aria-hidden

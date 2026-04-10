@@ -5,18 +5,22 @@ import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import Logo from "@/components/custom/logo";
-import { SignInButton } from "@clerk/nextjs";
+import { SignInButton, UserButton, useAuth } from "@clerk/nextjs";
 
 const NAV_LINKS = [
-  { label: "Product", href: "#" },
-  { label: "Developers", href: "#" },
-  { label: "Enterprise", href: "#" },
+  { label: "Product", href: "/" },
+  { label: "About", href: "/about" },
+  { label: "Blog", href: "/blog" },
+  { label: "Dashboard", href: "/dashboard", authOnly: true },
   { label: "Pricing", href: "#" },
-  { label: "Blog", href: "#" },
 ];
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const { userId } = useAuth();
+  const isSignedIn = !!userId;
+
+  const visibleLinks = NAV_LINKS.filter(link => !link.authOnly || isSignedIn);
 
   return (
     <motion.nav
@@ -33,7 +37,7 @@ export default function Navbar() {
 
           {/* Desktop Links */}
           <div className="hidden md:flex items-center gap-6">
-            {NAV_LINKS.map((link) => (
+            {visibleLinks.map((link) => (
               <Link
                 key={link.label}
                 href={link.href}
@@ -48,16 +52,26 @@ export default function Navbar() {
         <div className="flex items-center gap-4">
           {/* Desktop Actions */}
           <div className="hidden md:flex items-center gap-4">
-            
-            <Link
-              href="#"
-              className="text-sm font-medium text-white/50 hover:text-white transition-colors duration-200"
-            >
-             <SignInButton/>
-            </Link>
-            <button className="bg-white text-[#080808] text-sm font-medium px-4 py-2 rounded-lg hover:opacity-85 hover:-translate-y-px transition-all duration-200">
-              Get Started
-            </button>
+            {!isSignedIn ? (
+              <div className="flex items-center gap-4">
+                <div className="text-sm font-medium text-white/50 hover:text-white transition-colors duration-200 cursor-pointer">
+                  <SignInButton mode="modal" />
+                </div>
+                <button className="bg-white text-[#080808] text-sm font-medium px-4 py-2 rounded-xl hover:opacity-85 hover:-translate-y-px transition-all duration-200">
+                  Get Started
+                </button>
+              </div>
+            ) : (
+              <div className="flex items-center gap-4">
+                <Link 
+                  href="/dashboard/"
+                  className="text-xs font-mono uppercase tracking-widest text-white/40 hover:text-white transition-colors"
+                >
+                  Dashboard
+                </Link>
+                <UserButton />
+              </div>
+            )}
           </div>
           {/* Mobile Menu Toggle */}
           <button
@@ -81,7 +95,7 @@ export default function Navbar() {
             className="w-full overflow-hidden md:hidden bg-black/40 border-t border-white/5"
           >
             <div className="w-[92%] max-w-7xl mx-auto flex flex-col gap-4 py-4">
-              {NAV_LINKS.map((link) => (
+              {visibleLinks.map((link) => (
                 <Link
                   key={link.label}
                   href={link.href}
@@ -92,16 +106,25 @@ export default function Navbar() {
                 </Link>
               ))}
               <div className="h-px bg-white/10 w-full my-1" />
-              <Link
-                href="#"
-                className="text-sm font-medium text-white/70 hover:text-white transition-colors duration-200"
-                onClick={() => setIsOpen(false)}
-              >
-                Sign in
-              </Link>
-              <button className="bg-white text-[#080808] text-sm font-medium px-4 py-2 rounded-lg hover:opacity-85 transition-all duration-200 w-full items-center justify-center flex">
-                Get Started
-              </button>
+              {!isSignedIn ? (
+                <>
+                  <Link
+                    href="#"
+                    className="text-sm font-medium text-white/70 hover:text-white transition-colors duration-200"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    Sign in
+                  </Link>
+                  <button className="bg-white text-[#080808] text-sm font-medium px-4 py-2 rounded-xl hover:opacity-85 transition-all duration-200 w-full items-center justify-center flex">
+                    Get Started
+                  </button>
+                </>
+              ) : (
+                <div className="flex items-center justify-between p-2 rounded-xl bg-white/5">
+                  <span className="text-sm font-medium text-white/40">Profile</span>
+                  <UserButton />
+                </div>
+              )}
             </div>
           </motion.div>
         )}

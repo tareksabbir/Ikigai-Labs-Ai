@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 export default function UseCases() {
   return (
@@ -35,11 +36,12 @@ export default function UseCases() {
         </div>
 
         {/* Media Container */}
-        <div className="relative w-full h-125 md:h-150 rounded-2xl overflow-hidden shadow-2xl group border border-white/10">
-          {/* Background Image Placeholder */}
-          <div
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-700 ease-out group-hover:scale-105"
-            style={{ backgroundImage: "url('/hero.avif')" }}
+        <div className="relative w-full h-125 md:h-150 rounded-2xl overflow-hidden shadow-2xl group border border-white/10 hover:border-white/20 hover:shadow-[0_0_40px_rgba(255,255,255,0.05)] transition-all duration-500">
+          <Image
+            src="/hero.avif"
+            alt="Use cases showcase"
+            fill
+            className="absolute inset-0 object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105 pointer-events-none"
           />
           
           {/* Overlay to darken background slightly if needed */}
