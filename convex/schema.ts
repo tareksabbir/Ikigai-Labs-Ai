@@ -11,4 +11,15 @@ export default defineSchema({
       v.literal("failed"),
     ),
   }).index("by_owner", ["ownerId"]),
+  blogs: defineTable({
+    title: v.string(),
+    excerpt: v.string(),
+    content: v.string(),
+    category: v.string(),
+    author: v.string(),
+    authorId: v.string(),
+    image: v.string(),
+    featured: v.boolean(),
+    readTime: v.string(),
+  }).index("by_category", ["category"]),
 });
